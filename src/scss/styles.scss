@@ -1,0 +1,226 @@
+@import "../css/vendor/bootstrap.min";
+@import "_variables.scss";
+
+@import "modules/global";
+
+* {
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  height: 100%;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  color: white;
+
+  background-color: rgba(0, 0, 0, 1);
+}
+.outer-wrap {
+  position: relative;
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+@media (min-width: 769px) {
+  .outer-wrap {
+    width: 769px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.page {
+  display: none;
+}
+.page__main {
+  position: absolute;
+  display: block;
+  padding-top: 10px;
+  min-height: 100%;
+  width: 100%;
+}
+
+header {
+  text-align: center;
+  position: relative;
+}
+.logo {
+  margin-top: 15px;
+}
+.logo__gameName {
+  font-size: 28px;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.wordSearch {
+  width: 300px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+.wordSearchTable {
+  border-collapse: separate;
+  border-spacing: 2px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: white;
+
+  background-color: rgba(255, 152, 0, 0.57);
+}
+.wordSearchTable td {
+  text-transform: uppercase;
+  font-size: 24px;
+  width: 57px;
+  border: 4px solid transparent;
+
+  background-color: rgba(0, 0, 0, 0.75);
+  transition: background-color 0.5s;
+  transition: border-color 0.3s;
+}
+.wordSearchTable td.correct {
+  background-color: transparent;
+}
+.wordSearchTable td.active {
+  border: 4px solid rgba(255, 126, 0, 0.68);
+
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-name: pulse;
+}
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+.wordSearchTable td.error {
+  background-color: rgba(255, 0, 0, 0.6);
+}
+.wordSearchTable td.hooray {
+  background-color: rgba(0, 255, 0, 0.6);
+}
+
+.rules {
+  text-align: center;
+}
+.wordsToFind__title {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.wordsToFind {
+  text-align: right;
+  text-align: center;
+  padding-left: 5px;
+}
+.wordsToFind .word {
+  margin-top: 0;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  display: inline-block;
+}
+.wordsToFind .word span{
+  position: relative;
+  padding-right: 2.5em;
+  font-size: 1.17em;
+}
+.wordsToFind .word span::before {
+  display: block;
+  content: '';
+  width: 1em;
+  height: 1em;
+
+  border-color: orange;
+  border-width: 2px;
+  border-style: solid;
+
+  position: absolute;
+  top: 0;
+  right: 0.5em;
+}
+.wordsToFind .word span.found::after {
+  position: absolute;
+  top: -8px;
+  right: 0.45em;
+
+  display: block;
+  content: '';
+  width: 20px;
+  height: 24px;
+
+  background-image: url(../img/check.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+/*
+    ====== tutorial ======
+*/
+.tutorial__overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.tutorial__statusContainer {
+  margin-top: 330px;
+  background-color: #F39000;
+  border-top: solid 5px orange;
+  border-bottom: solid 5px orange;
+  padding: 30px;
+}
+.tutorial__status {
+  font-size: 22px;
+  text-align: center;
+  color: black;
+  line-height: 1.2;
+  margin: 0;
+
+}
+.tutorial__highlighted {
+  position: relative;
+  z-index: 50;
+  box-shadow: 0px 1px 11px 7px #eaf901;
+}
+/*
+    ====== /tutorial ======
+*/
+
+.timer {
+  position: absolute;
+  display: none;
+  right: 0;
+  top: 30px;
+  color: #f3923c;
+  font-size: 20px;
+  padding: 30px 15px 5px 10px;
+  font-weight: bold;
+  background-image: url(../img/icon-timer.png);
+  background-repeat: no-repeat;
+  background-position: center 7px;
+}
