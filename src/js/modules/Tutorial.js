@@ -6,7 +6,7 @@
  eslint no-unused-vars: "off"
 */
 window.app = window.app || {};
-window.app.Tutorial = function (firstEl, secondEl) {
+window.app.Tutorial = function (firstEl, secondEl, onFinish) {
   var overlay = document.createElement('div');
   overlay.classList.add('tutorial__overlay');
 
@@ -76,11 +76,8 @@ window.app.Tutorial = function (firstEl, secondEl) {
       removeCurrentHighlight();
       removeOverlay();
       status.destroy();
-      /* init Timer*/
-      app.animate.fadeIn({
-        elem: timerElement
-      });
-      timer.init();
+
+      onFinish();
     }, 1500);
   };
 };
