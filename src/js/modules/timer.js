@@ -53,14 +53,14 @@
         }
 
       }
-    }
+    };
 
     this.getsecondsDifference = function() {
       return secondsDifference;
-    }
+    };
     this.stop = function() {
       clearTimeout(tickTimerId);
-    }
+    };
 
     function render() {
       var minutes = Math.floor(secondsDifference / 60);
