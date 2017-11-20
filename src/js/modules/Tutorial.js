@@ -5,7 +5,8 @@
 /*
  eslint no-unused-vars: "off"
 */
-function Tutorial(firstEl, secondEl) {
+window.app = window.app || {};
+window.app.Tutorial = function (firstEl, secondEl) {
   var overlay = document.createElement('div');
   overlay.classList.add('tutorial__overlay');
 
@@ -50,7 +51,7 @@ function Tutorial(firstEl, secondEl) {
 
     status.init('Tap the first letter of the word "here".', 'tutorial__status');
 
-    firstEl.addEventListener('click', self.next)
+    firstEl.addEventListener('click', self.next);
   };
   this.next = function(){
     setTimeout(function() {
@@ -61,7 +62,7 @@ function Tutorial(firstEl, secondEl) {
 
       status.set('Tap the last letter.');
 
-      secondEl.addEventListener('click', self.finish)
+      secondEl.addEventListener('click', self.finish);
 
     }, 1000);
   };
@@ -79,7 +80,7 @@ function Tutorial(firstEl, secondEl) {
       app.animate.fadeIn({
         elem: timerElement
       });
-      timer.init()
+      timer.init();
     }, 1500);
-  }
-}
+  };
+};

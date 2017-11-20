@@ -15,7 +15,7 @@ var paths = {
     js: [
       './src/js/modules/polyfills.js',
       './src/js/modules/animate.js',
-      './src/js/modules/wordsToFind.js',
+      './src/js/modules/WordSearch.js',
       './src/js/modules/Tutorial.js',
       './src/js/modules/StatusMessage.js',
       './src/js/modules/timer.js',
